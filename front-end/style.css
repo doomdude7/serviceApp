@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  background-color: #141414e5;
+  color: rgba(255, 255, 255, 0.733);
+  /* height: 100vh; */
+  /* width: 100vw; */
+  /* overflow-x: hidden; */
+}
+
+label {
+  font: 1.5rem sans-serif;
+}
+.add-title {
+  font-size: 2.5rem;
+  padding: 1rem;
+}
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1.3rem;
+}
+caption {
+  font-size: 2rem;
+  padding-bottom: 0.5rem;
+}
+input,
+select,
+textarea {
+  font-size: 1.2rem;
+}
+input,
+select {
+  margin-left: 0.5rem;
+}
+.service-text {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+table,
+th,
+td {
+  font: 1rem sans-serif;
+  border: none;
+  border-collapse: collapse;
+}
+th,
+td {
+  background-color: #5a5a5ae5;
+  border-radius: 1px;
+  text-align: center;
+}
+th {
+  padding: 1rem;
+}
+th {
+  border: 1px solid white;
+  font-size: 1.2rem;
+}
+td {
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+}
+header {
+  display: flex;
+  width: 100%;
+  height: 10vh;
+  align-items: flex-start;
+  padding: 0.5rem 1.5rem;
+  justify-content: space-between;
+}
+.top-part {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  background-color: #27272760;
+  padding: 2rem 0rem;
+}
+.bottom-part {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  background-color: #27272760;
+  padding: 2rem 2rem;
+}
+.car-reg-box:hover {
+  background-color: #5a5a5a;
+  border: 1px solid black;
+  color: aquamarine;
+}
+.delete-car,
+.update-car,
+.update-service,
+.delete-service {
+  font-size: 1rem;
+}
+.add-btn {
+  background-color: red;
+}
+/* .add-cars-container {
+}
+.add-service-container {
+} */
+.service-history-container {
+  margin: 0rem 1rem;
+}

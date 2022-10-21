@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    
+    <title>Car Service History Management System</title>
+  </head>
+  <body>
+    <header>
+      <h1>PlovdivService-2012</h1>
+      <h2>Система за водене на сервизна история на автомобили.</h2>
+    </header>
+    <main>
+        <div class="top-part">
+      <div class="add-cars-container">
+        <h2 class="add-title">Добави автомобил:</h2>
+        <form id="car-form">
+        <label for="owner">Собственик:</label>
+        <input type="text" id="owner" name="owner" maxlength="50" required />
+        <br /><br />
+        <label for="brand">Марка:</label>
+        <input type="text" id="brand" name="brand" maxlength="50" required />
+        <br /><br />
+        <label for="model">Модел:</label>
+        <input type="text" id="model" name="model" maxlength="50" required />
+        <br /><br />
+        <label for="year">Година:</label>
+        <input
+          type="number"
+          id="year"
+          name="year"
+          min="1900"
+          max="2022"
+          step="1"
+          value="2012"
+          required
+        />
+        <br /><br />
+        <label for="registration">Рег.Номер:</label>
+        <input
+          type="text"
+          id="registration"
+          name="registration"
+          maxlength="8"
+          required
+        />
+        <br> <br>
+        <button id="car-submit">Добави!</button>
+        <button id="car-update" type="button">Редактирай!</button>
+    </form>
+      </div>
+      <div class="service-cars-container">
+        <table>
+            <caption>Автомобили:
+            </caption>
+            <colgroup />
+            <colgroup span="2" title="title" />
+            <thead>
+                <tr>
+                    <th scope="col">Собственик</th>
+                    <th scope="col">Марка</th>
+                    <th scope="col">Модел</th>
+                    <th scope="col">Година</th>
+                    <th scope="col">Рег.Номер</th>
+                </tr>
+            </thead>
+            <tbody id="cars-list">
+
+            </tbody>
+
+        </table>
+    </div>
+    </div>
+    <div class="bottom-part">
+      <div class="add-services-container">
+        <h2 class="add-title">Добави събитие:</h3>
+            <form id="service-form" >
+        <label for="date">Дата:</label>
+        <input
+          type="date"
+          id="date"
+          name="date"
+          min="2012/01/02"
+          max="2022/12/31"
+          required
+        />
+        <br /><br />
+        <label for="km">Километраж:</label>
+        <input
+          type="number"
+          id="km"
+          name="km"
+          step="10000"
+          required
+        />
+        <br /><br />
+        <label class="service-text" for="text">Текст:</label>
+        <textarea
+          id="text"
+          name="text"
+          rows="5"
+          cols="35"
+          required
+        >
+        </textarea>
+        <br /><br />
+        <label for="event">Периодично събитие</label>
+        <input type="checkbox" id="event" name="event" value="да" />
+        <br /><br />
+        <label for="next_date">Следваща дата:</label>
+        <input
+          type="date"
+          id="next_date"
+          name="next_date"
+          min="2022/10/22"
+          max="2024/12/31"
+        />
+        <br /><br />
+        <label for="next_change">Следваща смяна (км.):</label>
+        <input
+          type="number"
+          id="next_change"
+          name="next_change"
+          step="1000"
+        />
+        <br> <br>
+        <label for="car">Избран автомобил:</label>
+        <select name="car" id="pick-car" required>
+        </select>
+        <br> <br>
+        <button>Добави!</button>
+        <button id="service-update" type="button">Редактирай!</button>
+        </form>
+      </div>
+
+      <div class="service-history-container">
+      
+        <table>
+          <caption>Сервизна история за <span id="reg-span">(рег.номер)</span> :
+            </caption>
+            <colgroup />
+            <colgroup span="2" title="title" />
+            <thead>
+                <tr>
+                    <th scope="col">Дата</th>
+                    <th scope="col">Километраж</th>
+                    <th scope="col">Текст</th>
+                    <th scope="col">Периодично събитие</th>
+                    <th scope="col">Следваща дата</th>
+                    <th scope="col">Следваща смяна(км.)</th>
+                </tr>
+            </thead>
+            <tbody id="history-list">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+    </main>
+    <script src="./script.js"></script>
+ 
+  </body>
+</html>
