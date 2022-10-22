@@ -117,7 +117,7 @@ async function updateCarFillForm(carId) {
   });
 }
 
-async function updateServiceFillForm(serviceId, regNum) {
+async function updateServiceFillForm(serviceId, carId) {
   console.log(serviceId);
   const data = await fetch(
     `http://localhost:3000/service?field=service_id&type=${serviceId}`,
@@ -131,7 +131,7 @@ async function updateServiceFillForm(serviceId, regNum) {
   console.log(serviceInfo);
   const { date, km, text, event, next_date, next_change, car } = serviceInfo;
   console.log(date, km, text, event, next_date, next_change, car);
-  console.log(regNum);
+  // console.log(regNum);
   const dateInput = document.getElementById("date");
   const kmInput = document.getElementById("km");
   const textInput = document.getElementById("text");
@@ -149,11 +149,12 @@ async function updateServiceFillForm(serviceId, regNum) {
   }
   next_dateInput.value = next_date;
   next_changeInput.value = next_change;
-  carInput.value = regNum;
+  // carInput.value = regNum;
+  carInput.value = carId;
   const updateServiceButton = document.getElementById("service-update");
   updateServiceButton.addEventListener("click", (e) => {
     e.preventDefault();
-    const formData = new FormData(carForm);
+    const formData = new FormData(serviceForm);
     const formProps = Object.fromEntries(formData);
     const data = JSON.stringify(formProps);
     console.log(data);
@@ -201,6 +202,7 @@ async function updateCar(data, carId) {
 }
 
 async function updateService(data, serviceId) {
+  console.log("data", data);
   await fetch(`http://localhost:3000/service/${serviceId}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
@@ -242,7 +244,7 @@ async function fetchServiceApi(regNum, carId) {
     serviceUpdateBtn.classList.add("update-service");
     serviceUpdateBtn.innerText = "Редактирай!";
     serviceUpdateBtn.addEventListener("click", () => {
-      updateServiceFillForm(service.service_id, regNum);
+      updateServiceFillForm(service.service_id, carId);
     });
     if (service.event == null) {
       serviceEvent.innerText = "не";

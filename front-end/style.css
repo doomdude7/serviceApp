@@ -11,7 +11,9 @@ body {
   /* width: 100vw; */
   /* overflow-x: hidden; */
 }
-
+.car-reg-box {
+  cursor: pointer;
+}
 label {
   font: 1.5rem sans-serif;
 }
